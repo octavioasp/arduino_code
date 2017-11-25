@@ -1,0 +1,24 @@
+/*
+Projeto integrador
+Função sirene para ré
+Opção 1
+*/
+
+float seno;
+int frequencia;
+ 
+void setup() {
+ // Pino de saída
+ pinMode(7,OUTPUT);
+}
+ 
+void loop() {
+ for(int x=0;x<180;x++){
+  // Converte-se graus pra radiano para obter o seno
+  seno=(sin(x*3.14/180));
+  //Frequencia produzida pela variacao do seno
+  frequencia = 2150+(int(seno*1000));
+  tone(7,frequencia);
+  delay(2);
+ }
+}
